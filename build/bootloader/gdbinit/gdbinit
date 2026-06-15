@@ -1,0 +1,2 @@
+source C:/Espressif/projects_esp_fayyaz/OTA_Example/build/bootloader/gdbinit/symbols
+source C:/Espressif/projects_esp_fayyaz/OTA_Example/build/bootloader/gdbinit/connect

@@ -1,0 +1,9 @@
+[0;33m--- esp-idf-monitor 1.8.0 on com6 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x40041a76: [0;33mets_delay_us[0m[0m in [0;32mROM[0m
+[1;31m--- Error: ClearCommError failed (PermissionError(13, 'The device does not recognize the command.', None, 22))[0m
+[0;33m--- Waiting for the device to reconnect[0m[0;33m.[0m[0;33m[0m
+[0m--- 0x40375b60: [0;33mesp_restart_noos[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.4.1/components/esp_system/port/soc/esp32s3/system_internal.c[0m[0m:[1;31m160[0m
+[0;33m--- Warning: Checksum mismatch between flashed and built applications. Checksum of built application is 0754ba30050ca486e2f652c4c405b25376a9067fb99b050470526b556395786a[0m
+[0m--- 0x40375b60: [0;33mesp_restart_noos[0m[0m at [0;32mC:/Espressif/frameworks/esp-idf-v5.4.1/components/esp_system/port/soc/esp32s3/system_internal.c[0m[0m:[1;31m160[0m
+[0m

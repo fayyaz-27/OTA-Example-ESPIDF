@@ -1,0 +1,2 @@
+source C:/Espressif/projects_esp_fayyaz/OTA_Example/build/gdbinit/symbols
+source C:/Espressif/projects_esp_fayyaz/OTA_Example/build/gdbinit/connect

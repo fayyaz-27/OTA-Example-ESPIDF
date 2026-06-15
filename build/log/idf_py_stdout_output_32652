@@ -1,0 +1,74 @@
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x3 (DOWNLOAD(USB/UART0))
+Saved PC:0x40041a79
+waiting for download
+[0;32mI (267) esp_image: segment 5: paddr=000d2154 vaddr=600fe100 sizeI (461) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (461) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (471) wifi:Init management short buffer num: 32[0m
+[0;32mI (471) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (471) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (481) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (481) wifi:Init static rx buffer num: 10[0m
+[0;32mI (491) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (491) wifi_init: rx ba win: 6[0m
+[0;32mI (491) wifi_init: accept mbox: 6[0m
+[0;32mI (501) wifi_init: tcpip mbox: 32[0m
+[0;32mI (501) wifi_init: udp mbox: 6[0m
+[0;32mI (501) wifi_init: tcp mbox: 6[0m
+[0;32mI (511) wifi_init: tcp tx win: 5760[0m
+[0;32mI (511) wifi_init: tcp rx win: 5760[0m
+[0;32mI (511) wifi_init: tcp mss: 1440[0m
+[0;32mI (511) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (521) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (991) phy_init: phy_version 700,8582a7fd,Feb 10 2025,20:13:11[0m
+[0;32mI (1031) wifi:mode : softAP (58:e6:c5:6f:de:75)[0m
+[0;32mI (1031) wifi:Total power save buffer number: 16[0m
+[0;32mI (1031) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (1031) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (1041) OTA_SYSTEM: SoftAP complete. SSID: ESP32S3_OTA_AP Password: 12345678[0m
+[0;32mI (1041) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1[0m
+[0;32mI (1051) OTA_SYSTEM: Starting server on port: '80'[0m
+Running App... Free heap size: 269764 bytes
+Running App... Free heap size: 269772 bytes
+Running App... Free heap size: 269764 bytes
+Running App... Free heap size: 269764 bytes
+Running App... Free heap size: 269764 bytes
+Running App... Free heap size: 269764 bytes
+Running App... Free heap size: 269764 bytes
+Running App... Free heap size: 269764 bytes
+Running App... Free heap size: 269764 bytes
+[0;32mI (45061) wifi:new:<1,1>, old:<1,1>, ap:<1,1>, sta:<255,255>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (45061) wifi:station: 74:3a:f4:6a:d5:b0 join, AID=1, bgn, 40U[0m
+[0;32mI (45161) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 192.168.4.2[0m
+[0;32mI (45191) wifi:<ba-add>idx:2 (ifx:1, 74:3a:f4:6a:d5:b0), tid:0, ssn:11, winSize:64[0m
+Running App... Free heap size: 267388 bytes
+Running App... Free heap size: 267388 bytes
+Running App... Free heap size: 267388 bytes
+Running App... Free heap size: 267388 bytes
+Running App... Free heap size: 267388 bytes
+Running App... Free heap size: 267388 bytes
+Running App... Free heap size: 267388 bytes
+Running App... Free heap size: 267388 bytes
+Running App... Free heap size: 267388 bytes
+Running App... Free heap size: 267388 bytes
+Running App... Free heap size: 267388 bytes
+Running App... Free heap size: 258368 bytes
+Running App... Free heap size: 267388 bytes
+Running App... Free heap size: 267388 bytes
+Running App... Free heap size: 267388 bytes
+Running App... Free heap size: 267388 bytes
+Running App... Free heap size: 267388 bytes
+Running App... Free heap size: 267388 bytes
+Running App... Free heap size: 267388 bytes
+Running App... Free heap size: 267388 bytes
+Running App... Free heap size: 267388 bytes
+Running App... Free heap size: 267388 bytes
+Running App... Free heap size: 267388 bytes
+Running App... Free heap size: 267388 bytes
+Running App... Free heap size: 267388 bytes
+Running App... Free heap size: 267388 bytes
+Running App... Free heap size: 263816 bytes
+Running App... Free heap size: 267388 bytes
+Running App... Free heap size: 267388 bytes
+Running App... Free heap size: 267388 bytes
