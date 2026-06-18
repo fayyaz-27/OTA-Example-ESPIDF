@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESP32-S3 Local OTA Portal</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; text-align: center; background-color: #f4f6f9; color: #333; }
+        .card { max-width: 450px; margin: auto; padding: 25px; background: white; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        h2 { color: #007bff; }
+        input[type="file"] { margin: 20px 0; display: block; width: 100%; }
+        .btn { background: #28a745; color: white; border: none; padding: 12px 20px; font-size: 16px; border-radius: 6px; cursor: pointer; width: 100%; transition: 0.3s; }
+        .btn:hover { background: #218838; }
+        .progress-container { width: 100%; background-color: #e9ecef; border-radius: 6px; margin-top: 20px; display: none; }
+        .progress-bar { width: 0%; height: 20px; background-color: #007bff; border-radius: 6px; text-align: center; color: white; font-size: 14px; line-height: 20px; }
+        #status { margin-top: 15px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>ESP32-S3 Flash Terminal</h2>
+    <p>Connect to <strong>ESP32S3_OTA_AP</strong> before starting</p>
+    
+    <input type="file" id="firmwareFile" accept=".bin">
+    <button class="btn" onclick="uploadFirmware()">Flash Firmware</button>
+
+    <div class="progress-container" id="progressContainer">
+        <div class="progress-bar" id="progressBar">0%</div>
+    </div>
+    <div id="status"></div>
+</div>
+
+<script>
+function uploadFirmware() {
+    const fileInput = document.getElementById('firmwareFile');
+    const statusDiv = document.getElementById('status');
+    const progContainer = document.getElementById('progressContainer');
+    const progBar = document.getElementById('progressBar');
+
+    if (fileInput.files.length === 0) {
+        statusDiv.innerText = "Please select a valid .bin build file first.";
+        statusDiv.style.color = "red";
+        return;
+    }
+
+    const file = fileInput.files[0];
+    const xhr = new XMLHttpRequest();
+    
+    // Explicit targeting of SoftAP Gateway endpoint interface
+    xhr.open("POST", "http://192.168.4.1/update", true);
+
+    xhr.upload.addEventListener("progress", function(e) {
+        if (e.lengthComputable) {
+            progContainer.style.display = "block";
+            const percentComplete = Math.round((e.loaded / e.total) * 100);
+            progBar.style.width = percentComplete + "%";
+            progBar.innerText = percentComplete + "%";
+            statusDiv.innerText = "Streaming file chunks to flash...";
+            statusDiv.style.color = "#333";
+        }
+    });
+
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            statusDiv.innerText = "Success! Target updating. Rebooting target module...";
+            statusDiv.style.color = "green";
+        } else {
+            statusDiv.innerText = "Error encountered: " + xhr.responseText;
+            statusDiv.style.color = "red";
+        }
+    };
+
+    xhr.onerror = function() {
+        statusDiv.innerText = "Connection lost or tracking handshake timeout failed.";
+        statusDiv.style.color = "red";
+    };
+
+    // Streaming RAW Binary application stream instead of standard Multipart encoding wrapper
+    xhr.setRequestHeader("Content-Type", "application/octet-stream");
+    xhr.send(file);
+}
+</script>
+
+</body>
+</html>
